@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/stylesheets/cand-index.css">
+
+<div>
+    <div class='name-tag'>
+        <p><%= voterFirstName %></p>
+        <p><%= voterLastName %></p>
+        <p><%= voterEmail %></p>
+    </div>
+    <div class='vote-tag'>
+        <form action='/cand/loggedin/testing'method='POST'>
+            <div><h2>Candidate 1</h2></div>
+            <label>Vote for Candidate 1</label>
+            <input type="radio" id='one' name="ballot" value='A'>
+            <div><h2>Candidate 2</h2></div>
+            <label>Vote for Candidate 2</label>
+            <input type="radio" id='two' name="ballot" value='B'>
+            <button type="submit">Vote</button>
+        </form>
+    </div>
+</div>
