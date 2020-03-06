@@ -12,8 +12,7 @@ const ballot = new mongoose.Schema({
 
         voteCasted:{
             type:Array,
-            unique:true
-        },
+        }
     })
 
-    module.exports=mongoose.model('Ballot',ballot)
+module.exports=mongoose.model('Ballot',ballot)

@@ -1,0 +1,38 @@
+[
+  {
+    "voteCasted": [
+      "A"
+    ],
+    "_id": "5e62b2be0b106d27bce20583",
+    "ballotFirstName": "Haruka",
+    "ballotLastName": "Kanai",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "B"
+    ],
+    "_id": "5e62b2d30b106d27bce20585",
+    "ballotFirstName": "Andrew",
+    "ballotLastName": "Bernard",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "B"
+    ],
+    "_id": "5e62b2f00b106d27bce20587",
+    "ballotFirstName": "Nick",
+    "ballotLastName": "DiMatteo",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "B"
+    ],
+    "_id": "5e62b3140b106d27bce20589",
+    "ballotFirstName": "Zhuoxiang",
+    "ballotLastName": "Lalala",
+    "__v": 0
+  }
+]

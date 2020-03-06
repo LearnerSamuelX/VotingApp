@@ -1,0 +1,27 @@
+.title{
+    font-family: 'Quicksand', sans-serif;
+    border:1.5px rgb(88, 214, 88) solid;
+    width:30rem;
+    text-align: center;
+    margin:4rem auto auto;
+}
+
+.log-in{
+    border:2.5px black solid;
+    width:20rem;
+    padding:1.5rem;
+    margin:4rem auto auto;
+}
+
+.log-in input{
+    margin-bottom:0.5rem;
+}
+
+.log-in button{
+    margin-top:0.5rem;
+}
+
+.log-in-form{
+    display:flex;
+    flex-direction: column;
+}

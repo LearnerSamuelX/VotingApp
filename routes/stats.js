@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const Voter = require('../models/voter');
-const Ballot = require('../models/ballot')
+const BallotBox=require('../models/VoteCasting')
 const Polling = require('../models/candi');
 //ignore the registration for now
 
