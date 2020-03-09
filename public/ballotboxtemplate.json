@@ -1,0 +1,47 @@
+[
+  {
+    "voteCasted": [
+      "A"
+    ],
+    "_id": "5e64330835e8151524f21c66",
+    "ballotFirstName": "Haruka",
+    "ballotLastName": "Kanai",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "A"
+    ],
+    "_id": "5e64331335e8151524f21c68",
+    "ballotFirstName": "Andrew",
+    "ballotLastName": "Bernard",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "A"
+    ],
+    "_id": "5e64332235e8151524f21c6a",
+    "ballotFirstName": "Sam",
+    "ballotLastName": "Xie",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "A"
+    ],
+    "_id": "5e64332c35e8151524f21c6c",
+    "ballotFirstName": "Nick",
+    "ballotLastName": "DiMatteo",
+    "__v": 0
+  },
+  {
+    "voteCasted": [
+      "B"
+    ],
+    "_id": "5e64334035e8151524f21c6e",
+    "ballotFirstName": "Hello",
+    "ballotLastName": "World",
+    "__v": 0
+  }
+]

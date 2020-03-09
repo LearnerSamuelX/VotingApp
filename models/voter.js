@@ -15,7 +15,6 @@ const Voter = new register({
     email:{
         type:String,
         unique:true,
-        sparse: true,
         required:true
     }
 

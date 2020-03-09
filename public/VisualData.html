@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>It is finally working!</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <script>
+        d3.json("tryList.json").then(function(data){
+            var canvas = d3.select("body").append("svg")
+                .attr("width",500).attr("height",500)
+            canvas.selectAll("rect").data(data).enter().append("rect")
+            .attr("height",10).attr("width",(d)=>{return d.vote*10})
+            .attr("y",(d,i)=>{return i*50})
+            .attr("fill","navy")
+        })
+    </script>
+</body>
+</html>

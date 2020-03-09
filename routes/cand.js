@@ -2,12 +2,15 @@ const express=require('express');
 const router=express.Router();
 const Voter=require('../models/voter');
 const BallotBox=require('../models/VoteCasting')
+// const dataVisual=require('../models/dataVisual')
 const fs = require('fs')
 
 //ignore the registration for now
 var newVoter=''
 var newBallot =''
-var dataForVisualizing = ''
+var dataForVisualizingA = ''
+var dataForVisualizingB = ''
+var voteCollection= [{"name":"A","vote":0},{"name":"B","vote":0}]      //[{A:""},{B:""}]
 
 router.get('/',(req,res)=>{
     res.render('cand/profiles')
@@ -42,14 +45,15 @@ router.post('/loggedin',async (req,res)=>{
 })
 
 router.get('/loggedin/testing',async (req,res)=>{
-    dataForVisualizing = await BallotBox.find((error,data)=>{  //Voter Ballot
-        if(error){
-            console.log('Found some error'+error)
-        }
-        else{
-            res.send(data)
-        }
-    })
+    dataForVisualizingA = await BallotBox.find({voteCasted:["A"]})
+    dataForVisualizingB = await BallotBox.find({voteCasted:["B"]})
+    // voteCollection = await new dataVisual({
+    //     A:dataForVisualizingA.length,
+    //     B:dataForVisualizingB.length
+    // }).save()
+    voteCollection[0].vote=dataForVisualizingA.length
+    voteCollection[1].vote=dataForVisualizingB.length
+    res.send(voteCollection)
 })
 
 //testing
@@ -67,7 +71,7 @@ router.post('/loggedin/testing',async (req,res)=>{
 // Updating json file for data visualization
 router.get('/loggedin/testing/stats',(req,res)=>{
     // res.send(dataForVisualizing)
-    fs.writeFile('public/tryList.json',JSON.stringify(dataForVisualizing,null,2),(err)=>{
+    fs.writeFile('public/tryList.json',JSON.stringify(voteCollection,null,2),(err)=>{
         if(err){
             console.log(err)
         }else{
@@ -78,6 +82,7 @@ router.get('/loggedin/testing/stats',(req,res)=>{
 })
 
 
+//  \(**?)/
 //deleting database
 router.get('/loggedin/testing/voter/delete',async (req,res)=>{
     await Voter.remove({})
