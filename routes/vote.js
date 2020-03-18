@@ -13,7 +13,7 @@ var dataForVisualizingB = ''
 var voteCollection= [{"name":"A","vote":0},{"name":"B","vote":0}]      //[{A:""},{B:""}]
 
 router.get('/',(req,res)=>{
-    res.render('cand/profiles')
+    res.render('vote/vote')
 })
 
 router.get('/loggedin',async (req,res)=>{
@@ -40,23 +40,19 @@ router.post('/loggedin',async (req,res)=>{
         })
         
     }else{
-        res.redirect('/')
+        res.redirect('/vote')
     }
 })
 
 router.get('/loggedin/testing',async (req,res)=>{
     dataForVisualizingA = await BallotBox.find({voteCasted:["A"]})
     dataForVisualizingB = await BallotBox.find({voteCasted:["B"]})
-    // voteCollection = await new dataVisual({
-    //     A:dataForVisualizingA.length,
-    //     B:dataForVisualizingB.length
-    // }).save()
     voteCollection[0].vote=dataForVisualizingA.length
     voteCollection[1].vote=dataForVisualizingB.length
     res.send(voteCollection)
 })
 
-//testing
+//[T]ballot box testing
 router.post('/loggedin/testing',async (req,res)=>{
     const filledBallot = new BallotBox({
         ballotFirstName:newVoter.firstName,
@@ -68,9 +64,8 @@ router.post('/loggedin/testing',async (req,res)=>{
     res.send(newBallot)
 })
 
-// Updating json file for data visualization
+//[T]Updating json file for data visualization
 router.get('/loggedin/testing/stats',(req,res)=>{
-    // res.send(dataForVisualizing)
     fs.writeFile('public/tryList.json',JSON.stringify(voteCollection,null,2),(err)=>{
         if(err){
             console.log(err)
@@ -79,6 +74,27 @@ router.get('/loggedin/testing/stats',(req,res)=>{
         }
     })
     res.redirect('/')
+})
+
+
+// now this design shows everything
+router.get('/existing', async (err,req,res)=>{
+    let nameSearch= BallotBox.find() //extract all info from BallotBox model
+    if(req.query.first_Name_S!=null && req.query.first_Name_S!=""){
+        nameSearch = nameSearch.regex('ballotFirstName', new RegExp(req.query.first_Name_S, 'i'))
+    }else{
+        res.redirect('/vote')
+    }
+    try{
+        const targetName = await nameSearch;
+        res.render('cand/index',{
+            voterFirstName:targetName[0].ballotFirstName,
+            voterLastName:targetName[0].ballotLastName,
+            voterEmail:'NA'
+        })
+    }catch{
+        res.redirect('/vote')
+    }
 })
 
 

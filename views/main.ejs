@@ -1,20 +1,12 @@
 <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/stylesheets/login-main.css">
+<link rel="stylesheet" href="/stylesheets/main.css">
 
 <div>
     <h1 class='title'>Welcome to the Voting App</h1>
 </div>
 
-<div class='log-in'>
-    <div>
-        <form class='log-in-form' action='/cand/loggedin'method='POST'>
-            <label>First Name:</label>
-            <input type="text" name='first_Name'>
-            <label>Last Name:</label>
-            <input type="text" name='last_Name'>
-            <label>Email:</label>
-            <input type="email" name='email'>
-            <button>Submit</button> 
-        </form>
-    </div>
+<div class="navi-bar">
+    <a href="/vote">Vote</a> <!-- Need to figure out the proper nesting for this step -->
+    <a href="/profiles">Candidate Profiles</a>
+    <a href="/stats">Statistics</a>
 </div>

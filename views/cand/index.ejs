@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/stylesheets/cand-index.css">
 
+<%- include("../minors/header") %>
 <div>
     <div class='name-tag'>
         <p><%= voterFirstName %></p>
@@ -7,7 +8,7 @@
         <p><%= voterEmail %></p>
     </div>
     <div class='vote-tag'>
-        <form action='/cand/loggedin/testing'method='POST'>
+        <form action='/vote/loggedin/testing'method='POST'>
             <div><h2>Candidate 1</h2></div>
             <p>Bernie Sanders, Senator from Vermont</p>
             <label>Vote for Candidate 1</label>

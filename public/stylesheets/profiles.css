@@ -1,0 +1,41 @@
+.img-container{
+    width:50rem;
+    margin:auto auto;
+    display:flex;
+    flex-direction:row;
+}
+
+.img-container>div {
+    width:20rem;
+    margin:auto auto;
+}
+
+.photo {
+    width:15rem;
+    margin:auto auto;
+}
+
+.photo img{
+    width:15rem;
+}
+
+.candidate-info p{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    width:18rem;
+    text-align: center;
+    margin:1.5rem auto auto;
+}
+
+.link-to-web{
+    width:12.25rem;
+    margin:0.5rem auto auto;
+}
+
+.candidate-info a{
+    font-family: 'Quicksand', sans-serif;
+    font-weight:bold;
+    font-size: 20px;
+    text-decoration:none;
+    color:rgb(54, 79, 194);
+}

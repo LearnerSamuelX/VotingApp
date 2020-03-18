@@ -1,9 +1,33 @@
-<div>
-    <form action='/stats'method='GET'>
-        <div><h2>Candidate 1</h2></div>
-        <p>Bernie Sanders, Senator from Vermont</p>
+<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/profiles.css">
 
-        <div><h2>Candidate 2</h2></div>
-        <p>Michael Bloomberg, former Mayor of New York City</p>
-    </form>
+<div class='secondary-navi'>
+    <%- include("../minors/header") %>
+</div>
+
+<div class='img-container'>
+    <div class='candidate-info'>
+        <div class='photo'>
+            <img src='Joe Biden.png'/>
+        </div>
+        <div>
+            <p>Joe Biden, former Vice President of the United States</p>
+        </div>
+        <div class="link-to-web">
+            <a href="https://joebiden.com/joes-vision/">Campaign Platform</a>
+        </div>
+    </div>
+    
+
+    <div class='candidate-info'>
+        <div class='photo'>
+            <img src='Bernie Sanders.png'/>
+        </div>
+        <div>
+            <p>Bernie Sanders, the United States Senator from Vermont</p>
+        </div>
+        <div class="link-to-web">
+            <a href="https://berniesanders.com/issues/">Campaign Platform</a>
+        </div>
+    </div>
 </div>

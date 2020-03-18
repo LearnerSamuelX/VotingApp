@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/stylesheets/vote.css">
+
+<div class='log-in'>
+    <div>
+        <form class='log-in-form' action='/vote/loggedin'method='POST'>
+            <h4>Sign Up</h4>
+            <label>First Name:</label>
+            <input type="text" name='first_Name'>
+            <label>Last Name:</label>
+            <input type="text" name='last_Name'>
+            <label>Email:</label>
+            <input type="email" name='email'>
+            <button>Register</button> 
+        </form>
+    </div>
+</div>
+
+<div class='log-in'>
+    <div>
+        <form class='log-in-form' action='/vote/existing'method='get'>
+            <h4>Login</h4>
+            <label>First Name:</label>
+            <input type="text" name='first_Name_S'>
+            <!-- <label>Last Name:</label>
+            <input type="text" name='last_Name'>
+            <label>Email:</label>
+            <input type="email" name='email'> -->
+            <button>Log In</button> 
+        </form>
+    </div>
+</div>

@@ -9,8 +9,8 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true})
 const expressLayouts = require ('express-ejs-layouts');
 
-const mainRouter = require('./routes/register')
-const candidateRouter = require('./routes/cand')
+const mainRouter = require('./routes/main')
+const candidateRouter = require('./routes/vote')
 const statsRouter = require('./routes/stats')
 
 app.set('view engine','ejs')
@@ -23,8 +23,12 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static('public'));
 app.use('/',mainRouter)
-app.use('/cand',candidateRouter)
+app.use('/vote',candidateRouter)
 app.use('/stats',statsRouter)
+
+app.get('/profiles',(req,res)=>{
+    res.render('cand/profiles')
+})
 
 
 const db = mongoose.connection;
